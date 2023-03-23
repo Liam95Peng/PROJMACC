@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.projmacc.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameViewFragment"
+        android:name="com.example.projmacc.Game.GameViewFragment"
+        android:label="fragment_game_view"
+        tools:layout="@layout/fragment_game_view" >
+        <action
+            android:id="@+id/action_gameViewFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.projmacc.Home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_gameViewFragment"
+            app:destination="@id/gameViewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rankFragment"
+            app:destination="@id/rankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.projmacc.Register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentsFragment"
+        android:name="com.example.projmacc.Comments.CommentsListFragment"
+        android:label="RankFragment"
+        tools:layout="@layout/fragment_comment_list">
+        <action
+            android:id="@+id/action_commentsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_commentsFragment_to_commentsPostFragment"
+            app:destination="@id/commentsPostFragment" />
+        <action
+            android:id="@+id/action_commentsFragment_to_commentsFragment2"
+            app:destination="@id/commentsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/rankFragment"
+        android:name="com.example.projmacc.Rank.RankFragment"
+        android:label="RankFragment"
+        tools:layout="@layout/fragment_rank">
+        <action
+            android:id="@+id/action_rankFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentsPostFragment"
+        android:name="com.example.projmacc.Comments.CommentsPostFragment"
+        android:label="fragment_comments_post"
+        tools:layout="@layout/fragment_comments_post" >
+        <action
+            android:id="@+id/action_commentsPostFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+        <action
+            android:id="@+id/action_commentsPostFragment_to_commentsFragment2"
+            app:destination="@id/commentsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentsFragment2"
+        android:name="com.example.projmacc.Comments.CommentsFragment"
+        android:label="CommentsFragment" >
+        <action
+            android:id="@+id/action_commentsFragment2_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+        <action
+            android:id="@+id/action_commentsFragment2_to_commentsPostFragment"
+            app:destination="@id/commentsPostFragment" />
+    </fragment>
+</navigation>

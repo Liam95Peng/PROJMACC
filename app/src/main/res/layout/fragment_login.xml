@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LoginFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".login.LoginFragment">
+
+
+        <View
+            android:id="@+id/create_card"
+            android:layout_width="322dp"
+            android:layout_height="614dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_outline"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.496" />
+
+        <TextView
+            android:id="@+id/username_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="5dp"
+            android:fontFamily="sans-serif-black"
+            android:text="EMAIL"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintBottom_toTopOf="@+id/email"
+            app:layout_constraintEnd_toEndOf="@+id/create_card"
+            app:layout_constraintStart_toStartOf="@+id/create_card"
+            app:layout_constraintTop_toTopOf="@+id/create_card"
+
+            />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginTop="5dp"
+            android:elevation="5dp"
+            android:inputType="textEmailAddress"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/font_normal"
+
+            app:layout_constraintEnd_toEndOf="@+id/create_card"
+            app:layout_constraintStart_toStartOf="@+id/create_card"
+            app:layout_constraintTop_toBottomOf="@+id/username_hint" />
+
+        <TextView
+            android:id="@+id/password_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:elevation="5dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/password"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="@+id/create_card"
+            app:layout_constraintStart_toStartOf="@+id/create_card"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginTop="5dp"
+            android:elevation="5dp"
+            android:imeActionLabel="@string/action_sign_in_short"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/font_normal"
+
+            android:textColor="@android:color/darker_gray"
+            android:textColorHint="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="@+id/create_card"
+            app:layout_constraintStart_toStartOf="@+id/create_card"
+            app:layout_constraintTop_toBottomOf="@+id/password_hint" />
+
+        <CheckBox
+            android:id="@+id/remember_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/remember_me"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/password"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="232dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:background="@drawable/border_color_login"
+            android:elevation="20dp"
+            android:enabled="true"
+            android:stateListAnimator="@null"
+            android:text="@string/action_sign_in"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/register"
+            app:layout_constraintEnd_toEndOf="@+id/password"
+            app:layout_constraintStart_toStartOf="@+id/remember_me"
+            app:layout_constraintTop_toTopOf="@+id/remember_me" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="232dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:background="@drawable/border_color_register"
+            android:elevation="10dp"
+            android:enabled="true"
+            android:stateListAnimator="@null"
+            android:text="@string/action_sign_up"
+            android:textColor="@color/colorWhiteBackground"
+
+            app:layout_constraintBottom_toBottomOf="@+id/create_card"
+            app:layout_constraintEnd_toEndOf="@+id/login"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/login"
+            app:layout_constraintTop_toBottomOf="@+id/login" />
+
+
+        <!--com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:elevation="10dp"
+
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="@+id/register"
+            app:layout_constraintStart_toStartOf="@+id/register"
+            app:layout_constraintTop_toBottomOf="@+id/or_lable" />
+                -->
+        <Button
+            android:id="@+id/googleLogIn"
+            android:layout_width="232dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border_color_register"
+            android:elevation="10dp"
+            android:enabled="true"
+            android:stateListAnimator="@null"
+            android:text="LogIn with Google Account"
+            android:textColor="@color/colorWhiteBackground"
+            app:layout_constraintBottom_toTopOf="@+id/register"
+            app:layout_constraintEnd_toEndOf="@+id/login"
+            app:layout_constraintStart_toStartOf="@+id/login"
+            app:layout_constraintTop_toBottomOf="@+id/login"
+             />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:elevation="11dp"
+            android:visibility="gone"
+
+
+            app:layout_constraintBottom_toBottomOf="@+id/login"
+            app:layout_constraintEnd_toEndOf="@+id/login"
+            app:layout_constraintStart_toStartOf="@+id/login"
+            app:layout_constraintTop_toTopOf="@+id/login" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="601dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="328dp" />
+
+
+
+
+        <!--app:layout_constraintBottom_toTopOf="@id/sign_in_button" -->
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
